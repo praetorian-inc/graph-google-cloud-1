@@ -45,6 +45,6 @@ or by using GCP console.
 
 [Single project ingestion via Google Console](./single-project-console.md)
 
-[Multi-project ingestion via gcloud CLI tool]()
+[Multi-project ingestion via gcloud CLI tool](./multi-project-gcloud.md)
 
-[Multi-project ingestion via Google Console]()
+[Multi-project ingestion via Google Console](./multi-project-console.md)
