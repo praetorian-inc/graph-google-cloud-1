@@ -126,16 +126,6 @@ Google Cloud:
 - [`roles/iam.securityReviewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.securityReviewer)
 - [`roles/bigquery.metadataViewer`](https://cloud.google.com/bigquery/docs/access-control#bigquery.metadataViewer)
 
-Some additional data may be optionally ingested by the JupiterOne Google Cloud
-integration by configuring a custom role with the following permissions:
-
-```
-appengine.applications.get
-binaryauthorization.policy.get
-compute.projects.get
-orgpolicy.policy.get
-```
-
 To bind integration execution roles, run the
 [`gcloud iam add-iam-policy-binding`](https://cloud.google.com/sdk/gcloud/reference/iam/service-accounts/add-iam-policy-binding)
 command:
@@ -159,6 +149,24 @@ be:
 gcloud projects add-iam-policy-binding my-proj-id-123 \
    --member serviceAccount:j1-gc-integration-dev-sa@my-proj-id-123.iam.gserviceaccount.com \
    --role "roles/iam.securityReviewer"
+```
+
+Some additional data may be optionally ingested by the JupiterOne Google Cloud
+integration by configuring a custom role with the following permissions:
+
+```
+appengine.applications.get
+binaryauthorization.policy.get
+compute.projects.get
+```
+
+The integration will also try to ingest organization policy for
+"storage.publicAccessPrevention" to precisely calculate storage buckets public
+access, it is therefore recommended that the following permission is also
+included in the custom role above:
+
+```
+orgpolicy.policy.get
 ```
 
 ### Generate a service account key
