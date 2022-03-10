@@ -133,7 +133,7 @@ integration by configuring a custom role with the following permissions:
 appengine.applications.get
 binaryauthorization.policy.get
 compute.projects.get
-orgpolicy.policies.get
+orgpolicy.policy.get
 ```
 
 To bind integration execution roles, run the
